@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public class Joystick : MonoBehaviour,IEndDragHandler,IDragHandler
 {
+    
     [SerializeField] Canvas canvas;
     [SerializeField] Transform player;
     public float maxRadius;
@@ -10,6 +11,7 @@ public class Joystick : MonoBehaviour,IEndDragHandler,IDragHandler
     Vector2 startPos;
     Vector3 differance = Vector3.zero;
     float angle;
+    PlayerStats playerStats = new PlayerStats();
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -45,7 +47,7 @@ public class Joystick : MonoBehaviour,IEndDragHandler,IDragHandler
     }
     public void MovePlayer(Vector3 moveVector,float angle)
     {
-        player.transform.position += moveVector * Time.deltaTime * PlayerStats.Speed * 0.0005f;
+        player.transform.position += moveVector * Time.deltaTime * playerStats.MoveSpeed * 0.0005f;
 
     }
     private void OnDrawGizmosSelected()

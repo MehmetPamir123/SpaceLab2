@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 2ca9731451b39d7458a417b0ed0b71e6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - MyStats: {instanceID: 0}
+  - treasure: {fileID: 5421966360546642578, guid: 72bff4a3f64a2134bbd1a3c016263e51, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
