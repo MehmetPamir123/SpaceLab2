@@ -28,7 +28,6 @@ public class PlayerBullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         
         IDamagable damagable = collision.gameObject.GetComponent<IDamagable>();
         if(damagable != null)

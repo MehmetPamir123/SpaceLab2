@@ -255,9 +255,10 @@ GameObject:
   m_Component:
   - component: {fileID: 266446996}
   - component: {fileID: 266446998}
+  - component: {fileID: 266446999}
   m_Layer: 5
   m_Name: PlayerUI
-  m_TagString: Untagged
+  m_TagString: PlayerResourceController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -306,6 +307,27 @@ MonoBehaviour:
   player: {fileID: 400622347}
   allBullets:
   - {fileID: 7916475483715835340, guid: c7fa0aae0f9e57d4f801c39e4d6a7921, type: 3}
+--- !u!114 &266446999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266446995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a158bed1a44c333408610497f2855063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 2024970765}
+  MaxHealth: 0
+  currentHealth: 0
+  fuelSlider: {fileID: 1210874252}
+  MaxFuel: 0
+  currentFuel: 0
+  energySlider: {fileID: 358151984}
+  MaxEnergy: 0
+  currentEnergy: 0
 --- !u!1 &358151982
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,37 +456,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358151982}
   m_CullTransparentMesh: 1
---- !u!1 &394810993
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 394810994}
-  m_Layer: 0
-  m_Name: TheGameStatus
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &394810994
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394810993}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 466.13684, y: 271.07883, z: -2.317112}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &400622345
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +467,6 @@ GameObject:
   - component: {fileID: 400622347}
   - component: {fileID: 400622346}
   - component: {fileID: 400622349}
-  - component: {fileID: 400622350}
   - component: {fileID: 400622351}
   m_Layer: 7
   m_Name: Player
@@ -597,21 +587,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.12, y: 0.26353943}
   m_EdgeRadius: 0
---- !u!114 &400622350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400622345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e82e28a34602642b9839f03e76d540, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthSlider: {fileID: 2024970765}
-  MaxHealth: 0
-  currentHealth: 0
 --- !u!50 &400622351
 Rigidbody2D:
   serializedVersion: 4
@@ -2257,6 +2232,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228495936}
   m_CullTransparentMesh: 1
+--- !u!1 &1243107568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1243107570}
+  - component: {fileID: 1243107569}
+  m_Layer: 0
+  m_Name: DataPersistanceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1243107569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243107568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f3b7b9e0aeb5f04fbecafb0e9692d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1243107570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243107568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1352980826
 GameObject:
   m_ObjectHideFlags: 0

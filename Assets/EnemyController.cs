@@ -128,10 +128,10 @@ public class EnemyController : MonoBehaviour,IDamagable
 
         Debug.Log("Dead");
         Treasure treasureObj = Instantiate(treasure,transform.position,Quaternion.identity).GetComponent<Treasure>();
-        treasureObj.health = MyStats.Treasure[0];
-        treasureObj.fuel = MyStats.Treasure[1];
-        treasureObj.energy = MyStats.Treasure[2];
-        treasureObj.coin = MyStats.Treasure[3];
+        treasureObj.health = ((int)MyStats.Treasure[0]);
+        treasureObj.fuel = ((int)MyStats.Treasure[1]);
+        treasureObj.energy = ((int)MyStats.Treasure[2]);
+        treasureObj.coin = ((int)MyStats.Treasure[3]);
         Destroy(this.gameObject);
     }
 }

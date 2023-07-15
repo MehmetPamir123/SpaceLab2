@@ -3,20 +3,19 @@ using UnityEngine.UI;
 
 public class Treasure : MonoBehaviour
 {
-    PlayerHealth playerHealth;
+    PlayerResourceController PRC;
     public Slider slider;
     public float durationTime;
     public float geatherTime;
     public bool isGeathering;
 
-    public float health;
-    public float fuel;
-    public float energy;
-    public float coin;
-
-    PlayerStats playerStats;
+    public int health;
+    public int fuel;
+    public int energy;
+    public int coin;
     private void Start()
     {
+        PRC = GameObject.FindGameObjectWithTag("PlayerResourceController").GetComponent<PlayerResourceController>();
         slider.maxValue = geatherTime;
         slider.value = geatherTime;
         isGeathering = false;
@@ -59,10 +58,9 @@ public class Treasure : MonoBehaviour
     }
     void Geathered()
     {
-        playerStats.Energy += energy;
-        playerStats.Fuel += fuel;
-        playerStats.Coin += coin;
-
-        playerHealth.PlayerTakeDamage(-health);
+        PRC.HealthAdd(health);
+        PRC.FuelAdd(fuel);
+        PRC.EnergyAdd(energy);
+        Destroy(this.gameObject);
     }
 }

@@ -24,7 +24,7 @@ MonoBehaviour:
   attackRange: 3
   hostile: 1
   treasure:
-  - 5
+  - 10
   - 2
   - 2
   - 7

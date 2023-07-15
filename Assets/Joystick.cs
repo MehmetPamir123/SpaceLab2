@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Joystick : MonoBehaviour,IEndDragHandler,IDragHandler
+public class Joystick : MonoBehaviour,IEndDragHandler,IDragHandler,IDataPersistance
 {
     
     [SerializeField] Canvas canvas;
@@ -11,11 +11,15 @@ public class Joystick : MonoBehaviour,IEndDragHandler,IDragHandler
     Vector2 startPos;
     Vector3 differance = Vector3.zero;
     float angle;
-    PlayerStats playerStats = new PlayerStats();
+    float moveSpeed;
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         startPos = rectTransform.anchoredPosition;
+    }
+    public void MoveSpeedUp(float speedAmount)
+    {
+        moveSpeed += speedAmount;
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -33,26 +37,40 @@ public class Joystick : MonoBehaviour,IEndDragHandler,IDragHandler
     private void Update()
     {
         
-        
-        if(differance.magnitude <= maxRadius)
+        if(differance.magnitude != 0)
         {
-            MovePlayer(differance,angle);
-        }
-        else
-        {
+            if (differance.magnitude <= maxRadius)
+            {
+                MovePlayer(differance, angle);
+            }
+            else
+            {
 
-            Vector2 other = new Vector2(Mathf.Cos(angle) * maxRadius, Mathf.Sin(angle) * maxRadius);
-            MovePlayer(other,angle);
+                Vector2 other = new Vector2(Mathf.Cos(angle) * maxRadius, Mathf.Sin(angle) * maxRadius);
+                MovePlayer(other, angle);
+            }
         }
+
     }
     public void MovePlayer(Vector3 moveVector,float angle)
     {
-        player.transform.position += moveVector * Time.deltaTime * playerStats.MoveSpeed * 0.0005f;
+        player.transform.position += moveVector * Time.deltaTime * moveSpeed * 0.0005f;
+        
 
     }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, maxRadius);
+    }
+
+    public void LoadData(GameData data)
+    {
+        moveSpeed = data.MoveSpeed;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.MoveSpeed = moveSpeed;
     }
 }

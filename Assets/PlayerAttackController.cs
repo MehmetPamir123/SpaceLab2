@@ -9,7 +9,6 @@ public class PlayerAttackController : MonoBehaviour
     [Space(20)]
     public GameObject[] allBullets;
 
-    PlayerStats playerStats;
     public void NormalAttack()
     {
        
