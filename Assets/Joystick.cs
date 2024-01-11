@@ -11,9 +11,11 @@ public class Joystick : MonoBehaviour,IEndDragHandler,IDragHandler,IDataPersista
     Vector2 startPos;
     Vector3 differance = Vector3.zero;
     float angle;
-    float moveSpeed;
+    public float moveSpeed;
+    PlayerResourceController PRC;
     void Start()
     {
+        PRC = GameObject.FindGameObjectWithTag("PlayerResourceController").GetComponent<PlayerResourceController>();
         rectTransform = GetComponent<RectTransform>();
         startPos = rectTransform.anchoredPosition;
     }
@@ -55,7 +57,7 @@ public class Joystick : MonoBehaviour,IEndDragHandler,IDragHandler,IDataPersista
     public void MovePlayer(Vector3 moveVector,float angle)
     {
         player.transform.position += moveVector * Time.deltaTime * moveSpeed * 0.0005f;
-        
+        PRC.FuelAdd(-moveVector.magnitude/100 *Time.deltaTime);
 
     }
     private void OnDrawGizmosSelected()

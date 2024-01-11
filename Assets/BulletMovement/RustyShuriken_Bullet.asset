@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1905a6aac9ba84ab14e3ca686aae36, type: 3}
+  m_Name: RustyShuriken_Bullet
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 7dbc2931bee616648bde3596ea97399c, type: 3}
+  displayName: Rusty Shuriken
+  description: Should have been used a several hundered times. Great for space ninjas.
+  damage: 4
+  speed: 15
+  durability: 5
+  costEnergyAmount: 2
+  specialAbilities: 

@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerResourceController
+  - Bullet_Friend
+  - Bullet_Enemy
+  - Friend
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,7 +18,7 @@ TagManager:
   - UI
   - PlayGround
   - Player
-  - 
+  - Enemy
   - 
   - 
   - 

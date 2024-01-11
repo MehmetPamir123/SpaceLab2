@@ -17,14 +17,14 @@ MonoBehaviour:
   startHealth: 5
   moveSpeed: 10
   attackDamage: 1
-  attackSpeed: 1
+  attackSpeed: 30
   abilityDamage: 1
   sightRadius: 5
   walkPointRange: 6
   attackRange: 3
   hostile: 1
   treasure:
-  - 10
-  - 2
-  - 2
-  - 7
+  - 0
+  - 15
+  - 15
+  - 1

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc8cbb10815e7e4cbce5571b92374b2, type: 3}
+  m_Name: EnergyCore
+  m_EditorClassIdentifier: Assembly-CSharp::EnergyCoreObject
+  sprite: {fileID: -1503316044, guid: a97e4a99627c76048830e2d0cdd7c859, type: 3}
+  stackable: 0
+  type: 4
+  description: This battery is worse than it looks.
+  data:
+    Name: Small Battery
+    Id: 3
+    buffs:
+    - attiribute: 2
+      value: 0
+      min: 1
+      max: 5

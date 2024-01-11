@@ -22,8 +22,8 @@ public class Enemies : ScriptableObject
 
     [SerializeField] private bool hostile;
     [Space(30)]
-    [Header("Health , Fuel , Energy , Coin")]
-    [SerializeField] private float[] treasure = new float[] {0f,0f,0f,0f}; //health,fuel,energy,coin
+    [Header("Health , Fuel , Energy , Coin , GDuration , GTime")]
+    [SerializeField] private int[] treasure = new int[] {0,0,0,0,0,0}; //health,fuel,energy,coin
 
 
     public string DisplayName => displayName;
@@ -37,9 +37,9 @@ public class Enemies : ScriptableObject
     public bool Hostile => hostile;
     public float WalkPointRange => walkPointRange;
     public float AttackRange => attackRange;
-    public float[] Treasure => treasure;
+    public int[] Treasure => treasure;
 
-    public Enemies(string displayName, int maxHealth, int startHealth, float moveSpeed, int attackDamage, float attackSpeed, int abilityDamage, float sightRadius, float walkPointRange, float attackRange, bool hostile, float[] treasure)
+    public Enemies(string displayName, int maxHealth, int startHealth, float moveSpeed, int attackDamage, float attackSpeed, int abilityDamage, float sightRadius, float walkPointRange, float attackRange, bool hostile, int[] treasure)
     {
         this.displayName = displayName;
         this.maxHealth = maxHealth;
@@ -55,7 +55,13 @@ public class Enemies : ScriptableObject
         this.treasure = treasure;
     }
 }
-public interface IDamagable
+public interface IDamagableEnemy
+{
+    int MyCurrentHealth { get; set; }
+    public void TakeDamage(int damage);
+    public void Death();
+}
+public interface IDamagableFriend
 {
     int MyCurrentHealth { get; set; }
     public void TakeDamage(int damage);

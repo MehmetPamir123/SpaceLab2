@@ -5,37 +5,51 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
     public Bullets bulletStats;
-    public Vector3 direction;
-
 
     float duration;
     private void Start()
     {
         duration = bulletStats.Durability;
+        Invoke("DestroyBullet", bulletStats.Durability);
 
     }
-    public void Update()
+    public virtual void Update()
     {
-        if (duration <= 0)
-            DestroyBullet();
-        duration -= Time.deltaTime;
-        direction = transform.right * Time.deltaTime * bulletStats.Speed;
-        transform.position += transform.up * Time.deltaTime * bulletStats.Speed*000.5f;
+        Move();
     }
-    void DestroyBullet()
+    public virtual void DestroyBullet()
     {
         Destroy(this.gameObject);
     }
+    public virtual void Move()
+    {
+        transform.position += transform.up * Time.deltaTime * bulletStats.Speed * 000.5f;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        IDamagable damagable = collision.gameObject.GetComponent<IDamagable>();
-        if(damagable != null)
+        if(collision.GetComponent<IDamagableEnemy>() == null && collision.GetComponent<IDamagableFriend>() == null)
         {
-            damagable.TakeDamage(bulletStats.Damage);
-            Destroy(this.gameObject);
+            return;
         }
-        
 
+        if(gameObject.tag == "Bullet_Friend" && collision.GetComponent<IDamagableEnemy>() != null)
+        {
+            IDamagableEnemy damagable = collision.GetComponent<IDamagableEnemy>();
+            damagable.TakeDamage(bulletStats.Damage);
+            Hit();
+        }
+        if (gameObject.tag == "Bullet_Enemy" && collision.GetComponent<IDamagableFriend>() != null)
+        {
+            IDamagableFriend damagable = collision.GetComponent<IDamagableFriend>();
+            damagable.TakeDamage(bulletStats.Damage);
+            Hit();
+        }
+
+    }
+
+    public void Hit()
+    {
+
+        DestroyBullet();
     }
 }

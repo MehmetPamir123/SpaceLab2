@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour,IDamagable
+public class EnemyController : MonoBehaviour,IDamagableEnemy
 {
     public Enemies MyStats;
     [Space(25)]
@@ -23,22 +23,27 @@ public class EnemyController : MonoBehaviour,IDamagable
     //MyWalkingBox
     Vector2 startPos;
 
+
+    public delegate void MoveMethods();
+    public MoveMethods moveMethods;
     private void Start()
     {
         waiting = false;
         startPos = transform.position;
         MyCurrentHealth = MyStats.StartHealth;
         player = GameObject.Find("Player").transform;
-        timeBetweenAttacks = 1/MyStats.AttackSpeed;
+        timeBetweenAttacks = 100/MyStats.AttackSpeed;
     }
+
     private void Update()
     {
-        if (MyStats.SightRadius == 0) { return; }
+        if (MyStats.MoveSpeed == 0) { return; }
         playerInSightRange = Physics2D.OverlapCircle(transform.position, MyStats.SightRadius, whatIsPlayer);
         playerInAttackRange = Physics2D.OverlapCircle(transform.position, MyStats.AttackRange, whatIsPlayer);
         if(!playerInSightRange && !playerInAttackRange) { Patroling(); }
         if (playerInSightRange && !playerInAttackRange) { ChasePlayer(); }
         if (playerInSightRange && playerInAttackRange) { AttackPlayer(); }
+        
     }
     private void Patroling()
     {
@@ -64,8 +69,6 @@ public class EnemyController : MonoBehaviour,IDamagable
         float randomY = startPos.y + Random.Range(-MyStats.WalkPointRange, MyStats.WalkPointRange);
         float randomX = startPos.x + Random.Range(-MyStats.WalkPointRange, MyStats.WalkPointRange);
         walkPoint = new Vector2(randomX, randomY);
-        //if (Physics2D.Raycast(walkPoint, transform.TransformDirection(Vector2.up),3f, whatIsGround)) { walkPointSet = true; }
-
         walkPointSet = true;
 
     }
@@ -90,18 +93,18 @@ public class EnemyController : MonoBehaviour,IDamagable
     }
     private void AttackPlayer()
     {
-        /*
-        transform.LookAt(player);
+        float angle = Mathf.Atan2(player.position.y - transform.position.y, player.position.x - transform.position.x);
+        this.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * angle - 90);
 
         if (!alreadyAttacked)
         {
-
-            //Attack here
+            Debug.Log("ATTTACK!");
+            EnemyAttacks();
 
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
-        }*/
+        }
     }
     private void ResetAttack()
     {
@@ -134,4 +137,14 @@ public class EnemyController : MonoBehaviour,IDamagable
         treasureObj.coin = ((int)MyStats.Treasure[3]);
         Destroy(this.gameObject);
     }
+    private void EnemyAttacks()
+    {
+        GetComponent<IEnemyAttack>().Attack();
+    }
 }
+
+public interface IEnemyAttack
+{
+    public void Attack();
+}
+

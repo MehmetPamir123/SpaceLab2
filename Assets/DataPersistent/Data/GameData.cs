@@ -13,9 +13,9 @@ public class GameData
     public int MaxHealth;
     public int CurrentHeath;
     public int MaxFuel;
-    public int Fuel;
+    public float Fuel;
     public int MaxEnergy;
-    public int Energy;
+    public float Energy;
     public int Coin;
 
     public int LifeSaverHeart;
@@ -25,10 +25,10 @@ public class GameData
         this.MoveSpeed = 20f;
         this.AttackDamage = 100;
         this.AbilityDamage = 100;
-        this.AttackSpeed = 0.2f;
+        this.AttackSpeed = 50f;
 
-        this.MaxHealth = 100;
-        this.CurrentHeath = 70;
+        this.MaxHealth = 10;
+        this.CurrentHeath = 10;
         this.MaxFuel = 100;
         this.Fuel = 60;
         this.MaxEnergy = 50;
