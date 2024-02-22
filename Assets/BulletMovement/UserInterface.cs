@@ -111,14 +111,13 @@ public abstract class UserInterface : MonoBehaviour
             inventory.SwapItem(slotsOnInterfaces[obj], mouseHoverSlotData);
         }
         slotsOnInterfaces.UpdateSlotDisplay(NullItem);
-        //if (UIDetailObject != null)            Destroy(UIDetailObject);
+        if (UIDetailObject != null) Destroy(UIDetailObject);
     }
     public void OnDrag(GameObject obj)
     {
         if (MouseData.tempItemBeingDragged != null)
         {
             MouseData.tempItemBeingDragged.GetComponent<RectTransform>().position = Input.mousePosition;
-            //DescriptionObject.GetComponent<RectTransform>().position = Input.mousePosition;
         }
     }
 

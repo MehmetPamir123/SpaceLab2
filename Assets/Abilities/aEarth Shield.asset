@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08f67ba59db6a474e822adf5c8c92350, type: 3}
+  m_Name: aEarth Shield
+  m_EditorClassIdentifier: 
+  abilityName: 
+  abilityImage: {fileID: 0}
+  abilityDescription: 
+  energyCost: 0
+  activeTime: 5
+  cooldown: 1
+  usable: 1
+  EarthShield: {fileID: 3628296342369985792, guid: 4e51aceea0f30f54d87a8bfa8ccf0031, type: 3}
+  ShieldHP: 5

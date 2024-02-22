@@ -26,9 +26,9 @@ public class PlayerResourceController : MonoBehaviour,IDataPersistance
 
         healthSlider.value = currentHealth;
     }
-    public void MaxHealthAdd(int amount)
+    public void MaxHealthSET(int amount)
     {
-        MaxHealth += amount;
+        MaxHealth = amount;
         if (currentHealth >= MaxHealth) { currentHealth = MaxHealth; }
         if (MaxHealth < 0) { PlayerDied(); }
         healthSlider.maxValue = MaxHealth;
@@ -43,9 +43,9 @@ public class PlayerResourceController : MonoBehaviour,IDataPersistance
 
         fuelSlider.value = currentFuel;
     }
-    public void MaxFuelAdd(int amount)
+    public void MaxFuelSET(int amount)
     {
-        MaxFuel+= amount;
+        MaxFuel= amount;
         if (currentFuel >= MaxFuel) { currentFuel = MaxFuel; }
         if (MaxFuel < 0) { PlayerDied(); }
         fuelSlider.maxValue = MaxFuel;
@@ -59,9 +59,9 @@ public class PlayerResourceController : MonoBehaviour,IDataPersistance
 
         energySlider.value = currentEnergy;
     }
-    public void MaxEnergyAdd(int amount)
+    public void MaxEnergySET(int amount)
     {
-        MaxEnergy += amount;
+        MaxEnergy = amount;
         if (currentEnergy >= MaxEnergy) { currentEnergy = MaxEnergy; }
         energySlider.maxValue = MaxEnergy;
     }

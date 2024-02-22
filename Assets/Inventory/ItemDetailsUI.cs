@@ -25,4 +25,12 @@ public class ItemDetailsUI : MonoBehaviour
             buffText.GetComponent<TMP_Text>().text = (_item.item.buffs[i].attiribute.ToString()+ " : " + _item.item.buffs[i].value.ToString());
         }
     }
+    private void Update()
+    {
+        this.gameObject.transform.position = Input.mousePosition;
+    }
+    private void Start()
+    {
+        this.gameObject.transform.position = Input.mousePosition;
+    }
 }

@@ -29,10 +29,13 @@ public class GameData
 
         this.MaxHealth = 10;
         this.CurrentHeath = 10;
-        this.MaxFuel = 100;
-        this.Fuel = 60;
-        this.MaxEnergy = 50;
-        this.Energy = 25;
+
+        this.MaxFuel = 200;
+        this.Fuel = 200;
+
+        this.MaxEnergy = 20;
+        this.Energy = 20;
+
         this.Coin = 0;
 
         this.LifeSaverHeart = 1;

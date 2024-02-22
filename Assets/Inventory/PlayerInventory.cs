@@ -72,6 +72,19 @@ public class PlayerInventory : MonoBehaviour
                     {
                         if (attributes[ii].type == _slot.item.buffs[i].attiribute)
                             attributes[ii].value.AddModifier(_slot.item.buffs[i]);
+
+                        switch (attributes[ii].type.ToString())
+                        {
+                            case "Health":
+                                PRC.MaxHealthSET(attributes[ii].value.BaseValue);
+                                break;
+                            case "Fuel":
+                                PRC.MaxFuelSET(attributes[ii].value.BaseValue);
+                                break;
+                            case "Energy":
+                                PRC.MaxEnergySET(attributes[ii].value.BaseValue);
+                                break;
+                        }
                     }
                 }
                 break;
@@ -81,7 +94,12 @@ public class PlayerInventory : MonoBehaviour
             default:
                 break;
         }
+        
+       
     }
+
+    public PlayerResourceController PRC;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var item = collision.GetComponent<GroundItem>();

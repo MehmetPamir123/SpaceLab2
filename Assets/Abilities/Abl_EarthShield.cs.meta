@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 08f67ba59db6a474e822adf5c8c92350
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - stats: {fileID: 11400000, guid: dea3f28969dae7f469dc77b4b6ca3897, type: 2}
+  - EarthShield: {fileID: 3628296342369985792, guid: 4e51aceea0f30f54d87a8bfa8ccf0031, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

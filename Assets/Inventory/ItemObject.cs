@@ -29,10 +29,12 @@ public enum Attributes
     EnergyRegen,
 
     AttackDamage,
-    MagicDamage,
+    AbilityDamage,
     Armour,
     AttackSpeed,
     SkillSpeed,
+
+    MoveSpeed,
 
 }
 public abstract class ItemObject : ScriptableObject

@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 2099722043, guid: 4cbcc36ae13a7be4b9ca5b7c302e30a3, type: 3}
   stackable: 1
   type: 1
-  description: 
+  description: An Armour from the world itself. Lookslike mothernature takes care
+    of you more than humanity itself.
   data:
     Name: World Armour
-    Id: 3
+    Id: 4
     buffs:
     - attiribute: 8
       value: 0

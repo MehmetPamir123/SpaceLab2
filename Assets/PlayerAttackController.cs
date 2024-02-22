@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttackController : MonoBehaviour,IDataPersistance
 {
-    public GameObject currentPlayerBullet;
+    static GameObject currentPlayerBullet;
     public Transform player;
     [Space(20)]
     [SerializeField]bool alreadyAttacked;
@@ -48,5 +48,9 @@ public class PlayerAttackController : MonoBehaviour,IDataPersistance
     public void SaveData(ref GameData data)
     {
         data.AttackSpeed = attackSpeed;
+    }
+    static GameObject GetBullet()
+    {
+        return currentPlayerBullet;
     }
 }

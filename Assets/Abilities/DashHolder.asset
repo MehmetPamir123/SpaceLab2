@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904cf0a55600e6d44b8119c8f98e8357, type: 3}
+  m_Name: DashHolder
+  m_EditorClassIdentifier: 
+  passive: {fileID: 0}
+  abilityNormal: {fileID: 11400000, guid: f3d6a398371a6de49a5056bca1fe2e22, type: 2}
+  abilityMaster: {fileID: 0}
+  abilityPerfect: {fileID: 0}
+  Mastery: 2
+  Level: 0
