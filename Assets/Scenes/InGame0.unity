@@ -1232,6 +1232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0e62586571e7a4686b7ee7c06cc041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPlayerBullet: {fileID: 7916475483715835340, guid: c7fa0aae0f9e57d4f801c39e4d6a7921, type: 3}
   player: {fileID: 400622347}
   alreadyAttacked: 0
 --- !u!114 &266446999
@@ -2020,7 +2021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &345185292
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2514,7 +2515,7 @@ MonoBehaviour:
     value:
       baseValue: 0
       modifiedValue: 0
-  PRC: {fileID: 0}
+  PRC: {fileID: 266446999}
 --- !u!114 &400622354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4122,7 +4123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &702155129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8496,7 +8497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1471302346
 RectTransform:
   m_ObjectHideFlags: 0
