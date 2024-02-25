@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Passive : MonoBehaviour
+public class Passive : ScriptableObject
 {
     public string abilityName;
-    public Image abilityImage;
+    public Sprite abilityImage;
     public string abilityDescription;
 
     public virtual void Activate(GameObject triggeredObject, PlayerResourceController PRC)

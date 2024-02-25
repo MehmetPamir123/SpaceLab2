@@ -125,8 +125,6 @@ public class PlayerResourceController : MonoBehaviour,IDataPersistance
             InventoryNumber = true;
             Butt_Switch.sprite = spriteOuter;
         }
-
-
-
     }
+
 }

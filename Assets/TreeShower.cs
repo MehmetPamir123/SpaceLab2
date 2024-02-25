@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TreeShower : MonoBehaviour
 {
-    static Skills[] skills;
+    public Skills[] skills;
     List<GameObject> AllShowedSkillTrees = new List<GameObject>();
 
     private void Start()

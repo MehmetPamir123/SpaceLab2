@@ -16,20 +16,25 @@ public class PlayerAbilityController : MonoBehaviour
     private void Start()
     {
         PRC = GameObject.FindGameObjectWithTag("PlayerResourceController").GetComponent<PlayerResourceController>();
-        Debug.Log(PRC.GetEnergy());
     }
-    private void Update()
+    public void SkillUse(int abilityNummer)
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        switch (abilityNummer)
         {
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Skill1Ability.Activate(player,PRC);
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            Skill2Ability.Activate(player,PRC);
+            default:
+                break;
+
+            case 1:
+                Skill1Ability.Activate(player, PRC);
+                break;
+
+            case 2:
+                Skill2Ability.Activate(player, PRC);
+                break;
+
+            case 3:
+                Skill3Ability.Activate(player, PRC);
+                break;
         }
     }
 }

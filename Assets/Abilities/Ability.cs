@@ -7,7 +7,7 @@ public abstract class Ability : ScriptableObject
 {
     public string abilityName;
     public int currentSkillLevel;
-    public Image abilityImage;
+    public Sprite abilityImage;
     public string abilityDescription;
 
 

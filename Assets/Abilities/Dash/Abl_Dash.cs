@@ -4,28 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "aDash", menuName = "Abilities/Flexible/Dash")]
+[CreateAssetMenu(fileName = "aDash", menuName = "Abilities/Flexible/Dash_Normal")]
 [System.Serializable]
 public class Abl_Dash : Ability
 { 
-
-    Rigidbody2D rb;
+    protected Rigidbody2D rb;
     public int dashVelocity;
     public override void Activate(GameObject triggeredObject, PlayerResourceController PRC)
     {
-
         if (!usable) { return; }
+        usable = false;
         if (energyCost > PRC.GetEnergy()) { return; }
         rb = triggeredObject.GetComponent<Rigidbody2D>();
         PRC.EnergyAdd(-energyCost);
 
-        triggeredObject.GetComponent<MonoBehaviour>().StartCoroutine(DashCoroutine(triggeredObject));
+        triggeredObject.GetComponent<MonoBehaviour>().StartCoroutine(this.DashCoroutine(triggeredObject));
         StartCooldown(triggeredObject.GetComponent<MonoBehaviour>());
     }
     private IEnumerator DashCoroutine(GameObject triggeredObject)
     {
         TrailRenderer tr = triggeredObject.GetComponent<TrailRenderer>();
         tr.emitting = true;
+        tr.startColor = Color.white;
         Vector2 dashVector = triggeredObject.GetComponent<Transform>().up * dashVelocity;
         rb.velocity += dashVector;
         yield return new WaitForSeconds(0.1f);
@@ -34,12 +34,13 @@ public class Abl_Dash : Ability
     }
     public override void AfterCooldown()
     {
-        Debug.Log("AfterC DASH");
+        usable = true;
     }
     public override void AfterDectivate()
     {
         throw new NotImplementedException();
     }
-
-
 }
+
+
+
