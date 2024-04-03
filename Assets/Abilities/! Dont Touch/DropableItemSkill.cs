@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DragableItemSkill : DropableItem
+public class DropableItemSkill : DropableItem
 {
-    public Ability ability;
+    public int skillPlace;
+    Ability ability;
     public override void SetStats()
     {
         if (MouseAbilityData.ability == null) { base.SetStats(); return;  }
         ability = MouseAbilityData.ability;
-        GetComponent<Image>().sprite = ability.abilityImage;
-        base.SetStats();
+
+        PAC.AddSkillToSkillSlot(ability, skillPlace, this.gameObject.GetComponent<Image>());
     }
 }

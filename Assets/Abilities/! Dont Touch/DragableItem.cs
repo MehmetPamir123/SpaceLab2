@@ -16,12 +16,11 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler,ID
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        GameObject createdImage = CreateTempItem(this.gameObject);
+        CreateTempItem(this.gameObject);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Dragging");
         tempItem.transform.position = Input.mousePosition;
     }
 

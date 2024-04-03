@@ -15,6 +15,6 @@ MonoBehaviour:
   passive: {fileID: 11400000, guid: 2087834b830657d4691834e7d1fdfb65, type: 2}
   abilityNormal: {fileID: 11400000, guid: f3d6a398371a6de49a5056bca1fe2e22, type: 2}
   abilityMaster: {fileID: 11400000, guid: 25a1252f55874c94081fb59e84d88053, type: 2}
-  abilityPerfect: {fileID: 11400000, guid: c7a0fbf4b2c53ac439c5ecae46472e2d, type: 2}
-  Mastery: 4
-  Level: 0
+  abilityPerfect: {fileID: 11400000, guid: b9dba5826d1684a45a013b4033298058, type: 2}
+  Mastery: 3
+  Level: 3

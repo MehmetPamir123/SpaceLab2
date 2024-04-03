@@ -1,19 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttackController : MonoBehaviour,IDataPersistance
 {
     public GameObject currentPlayerBullet;
+    public GameObject defaultBullet;
+    public GameObject[] allBullets;
+
     public Transform player;
+    
+
     [Space(20)]
     [SerializeField]bool alreadyAttacked;
     float attackSpeed;
-    PlayerResourceController PRC;
-
-    private void Start()
+    public PlayerResourceController PRC;
+    public Image imageGrayed;
+         
+    public void SetCurrentBullet(ItemObject bullet)
     {
-        PRC=GetComponent<PlayerResourceController>();
+        foreach (var item in allBullets)
+        {
+            if (item.name == bullet.data.Name)
+            {
+                currentPlayerBullet = item;
+            }
+        }
+    }
+    public void SetBulletDefault()
+    {
+        currentPlayerBullet = defaultBullet;
     }
     public void LoadData(GameData data)
     {
@@ -37,16 +54,31 @@ public class PlayerAttackController : MonoBehaviour,IDataPersistance
             PRC.EnergyAdd(-costEnergyAmount);
 
             alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), 100/attackSpeed);
+            StartCoroutine(Cooldown(100 / attackSpeed));
         }
     }
-    private void ResetAttack()
-    {
-        alreadyAttacked = false;
-    }
-
     public void SaveData(ref GameData data)
     {
         data.AttackSpeed = attackSpeed;
+    }
+
+    IEnumerator Cooldown(float time)
+    {
+
+        float maxCooldown = time;
+        for (; time >= 0.02f; time -= 0.02f)
+        {
+            imageGrayed.fillAmount = time / maxCooldown;
+            yield return new WaitForSeconds(0.02f);
+
+
+        }
+        alreadyAttacked = false;
+        if (imageGrayed != null)
+        {
+            imageGrayed.fillAmount = 0;
+        }
+
+
     }
 }

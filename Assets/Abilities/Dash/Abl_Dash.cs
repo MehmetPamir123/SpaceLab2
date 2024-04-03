@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "aDash", menuName = "Abilities/Flexible/Dash_Normal")]
+[CreateAssetMenu(fileName = "aDash", menuName = "Abilities/Flexible/Dash/Dash_Normal")]
 [System.Serializable]
 public class Abl_Dash : Ability
 { 

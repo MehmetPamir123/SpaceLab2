@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1905a6aac9ba84ab14e3ca686aae36, type: 3}
   m_Name: DoubleSwords Bullet
   m_EditorClassIdentifier: 
-  icon: {fileID: -1895932643, guid: ccf8071aa755b9d45a5a2476f4669e62, type: 3}
-  displayName: Double Swords
+  sprite: {fileID: -1895932643, guid: ccf8071aa755b9d45a5a2476f4669e62, type: 3}
+  stackable: 0
+  type: 0
   description: We should fire two of them to protect the spin momentum... I guess?
+  data:
+    Name: Double Swords
+    Id: -1
+    buffs: []
   damage: 7
   speed: 8
   durability: 10

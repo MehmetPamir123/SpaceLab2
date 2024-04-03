@@ -76,6 +76,7 @@ public class InventoryObject : ScriptableObject//,ISerializationCallbackReceiver
             InventorySlot temp = new InventorySlot(item2.item, item2.amount);
             item2.UpdateSlot( item1.item, item1.amount);
             item1.UpdateSlot( temp.item, temp.amount);
+
         }
     }
 
@@ -138,7 +139,7 @@ public class InventoryObject : ScriptableObject//,ISerializationCallbackReceiver
     }
 }
 [System.Serializable]
-public class Inventory
+public class Inventory //ENVANTER YERÝNÝ ARTIRMAK ÝSTERSEN BURADAN ARTIRABÝLÝRSÝN
 {
     public InventorySlot[] Slots = new InventorySlot[21];
     public void Clear()

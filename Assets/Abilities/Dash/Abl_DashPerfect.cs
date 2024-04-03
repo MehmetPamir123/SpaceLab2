@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "aDashPerfect", menuName = "Abilities/Flexible/Dash_Perfect")]
+[CreateAssetMenu(fileName = "aDashPerfect", menuName = "Abilities/Flexible/Dash/Dash_Perfect")]
 public class Abl_Perfect : Abl_Dash
 {
     protected GameObject Bullet;

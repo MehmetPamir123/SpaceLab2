@@ -9,15 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1acab46b0500ea44e90bc4201f598eda, type: 3}
-  m_Name: aDash_Perfect
+  m_Script: {fileID: 11500000, guid: 97ec0a217ccdd9c4a9c67d0a3c014fbc, type: 3}
+  m_Name: aEarth ShieldMaster
   m_EditorClassIdentifier: 
-  abilityName: Dash Perfect
+  abilityName: 
   currentSkillLevel: 0
-  abilityImage: {fileID: 21300000, guid: f9f7d66746a96a44fae8ed1879a1cdde, type: 3}
+  abilityImage: {fileID: 21300000, guid: 2092622eb80f67e43bcdaf969a68afca, type: 3}
   abilityDescription: 
   energyCost: 0
   activeTime: 0
-  cooldown: 1
+  cooldown: 0
   usable: 1
-  dashVelocity: 70
+  EarthShield: {fileID: 0}
+  ShieldHP: 0

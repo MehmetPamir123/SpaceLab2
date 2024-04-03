@@ -6,9 +6,14 @@ using UnityEngine.UI;
 
 public class DropableItem : MonoBehaviour,IDropHandler
 {
+    protected PlayerAbilityController PAC;
+    private void Start()
+    {
+        PAC = GameObject.Find("Player").GetComponent<PlayerAbilityController>();
+    }
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("dropped");
+
         SetStats();
     }
     public virtual void SetStats()

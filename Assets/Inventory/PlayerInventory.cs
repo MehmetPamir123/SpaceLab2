@@ -7,7 +7,7 @@ public class PlayerInventory : MonoBehaviour
     public InventoryObject inventory;
     public InventoryObject equipmentInner;
     public InventoryObject equipmentOuter;
-
+    public PlayerAttackController PAC;
 
     public Attribute[] attributes;
 
@@ -46,6 +46,13 @@ public class PlayerInventory : MonoBehaviour
                             attributes[ii].value.RemoveModifier(_slot.item.buffs[i]);
                     }
                 }
+                
+                Debug.Log(_slot.item.Name);
+                if (_slot.ItemObject.type == ItemType.Bullet)
+                {
+                    PAC.SetBulletDefault();
+                }
+                
                 break;
             case InterfaceType.Chest:
 
@@ -73,19 +80,24 @@ public class PlayerInventory : MonoBehaviour
                         if (attributes[ii].type == _slot.item.buffs[i].attiribute)
                             attributes[ii].value.AddModifier(_slot.item.buffs[i]);
 
-                        switch (attributes[ii].type.ToString())
+                        switch (attributes[ii].type)
                         {
-                            case "Health":
+                            case Attributes.Health:
                                 PRC.MaxHealthSET(attributes[ii].value.BaseValue);
                                 break;
-                            case "Fuel":
+                            case Attributes.Fuel:
                                 PRC.MaxFuelSET(attributes[ii].value.BaseValue);
                                 break;
-                            case "Energy":
+                            case Attributes.Energy:
                                 PRC.MaxEnergySET(attributes[ii].value.BaseValue);
                                 break;
                         }
                     }
+                }
+                Debug.Log(_slot.item.Name);
+                if (_slot.ItemObject.type == ItemType.Bullet)
+                {
+                    PAC.SetCurrentBullet(_slot.ItemObject);
                 }
                 break;
             case InterfaceType.Chest:
@@ -97,7 +109,6 @@ public class PlayerInventory : MonoBehaviour
         
        
     }
-
     public PlayerResourceController PRC;
 
     private void OnTriggerEnter2D(Collider2D collision)

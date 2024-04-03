@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "aDashMaster", menuName = "Abilities/Flexible/Dash_Master")]
+[CreateAssetMenu(fileName = "aDashMaster", menuName = "Abilities/Flexible/Dash/Dash_Master")]
 public class Abl_DashMaster : Abl_Dash
 {
     public override void Activate(GameObject triggeredObject, PlayerResourceController PRC)

@@ -4,42 +4,14 @@ using UnityEngine;
 
 public class TreeShower : MonoBehaviour
 {
-    public Skills[] skills;
-    List<GameObject> AllShowedSkillTrees = new List<GameObject>();
+    public GameObject[] SkillTreeTypes = new GameObject[3];
 
-    private void Start()
+    public void ShowThisType(int type) //for buttons
     {
-        
-    }
-    public void ShowAttack()
-    {
-        DeleteShowedSkills();
-
-        foreach (Skills item in skills)
+        for (int i = 0; i < SkillTreeTypes.Length; i++)
         {
-            if(item.Type == SkillType.Attack)
-            {
-                AllShowedSkillTrees.Add(item.SkillTree);
-                SkillTree skillTree = Instantiate(item.SkillTree, this.transform).GetComponent<SkillTree>();
-            }
+            SkillTreeTypes[i].SetActive(false);
         }
-    }
-
-    public void DeleteShowedSkills()
-    {
-        foreach (GameObject item in AllShowedSkillTrees)
-        {
-            Destroy(item);
-        }
+        SkillTreeTypes[type].SetActive(true);
     }
 }
-
-[System.Serializable]
-public class Skills
-{
-    public string Name;
-    public SkillType Type;
-    public GameObject SkillTree;
-}
-
-

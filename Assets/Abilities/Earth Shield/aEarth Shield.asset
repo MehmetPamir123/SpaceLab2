@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: aEarth Shield
   m_EditorClassIdentifier: 
   abilityName: 
-  abilityImage: {fileID: 0}
+  currentSkillLevel: 0
+  abilityImage: {fileID: 21300000, guid: 22d566d48e0dc5741ab459fc9a4ee663, type: 3}
   abilityDescription: 
-  energyCost: 0
+  energyCost: 1
   activeTime: 5
-  cooldown: 1
+  cooldown: 4
   usable: 1
   EarthShield: {fileID: 3628296342369985792, guid: 4e51aceea0f30f54d87a8bfa8ccf0031, type: 3}
   ShieldHP: 5

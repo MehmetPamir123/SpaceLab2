@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a35251b0b65c2f4b828137fc99f2368, type: 3}
   m_Name: aDash
   m_EditorClassIdentifier: 
-  abilityName: DashNormal
+  abilityName: Dash Normal
   currentSkillLevel: 0
   abilityImage: {fileID: 21300000, guid: a296e920aeee64f43833f54fd4fd8eab, type: 3}
   abilityDescription: 
-  energyCost: 0
+  energyCost: 1
   activeTime: 0
   cooldown: 1
   usable: 1
-  dashVelocity: 20
+  dashVelocity: 50

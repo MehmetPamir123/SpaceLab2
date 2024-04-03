@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "aEarth Shield", menuName = "Abilities/Defence/Earth Shield")]
+[CreateAssetMenu(fileName = "aEarth Shield", menuName = "Abilities/Defence/Earth Shield/Earth Shield_Normal")]
 [System.Serializable]
 public class Abl_EarthShield : Ability
 {
@@ -18,6 +18,7 @@ public class Abl_EarthShield : Ability
     public override void Activate(GameObject triggeredObject,PlayerResourceController PRC)
     {
         if(!usable) { return; }
+        usable = false;
         PRC = GameObject.FindGameObjectWithTag("PlayerResourceController").GetComponent<PlayerResourceController>();
         if (PRC.GetEnergy() < energyCost) { return; }
         PRC.EnergyAdd(-energyCost);
@@ -36,6 +37,6 @@ public class Abl_EarthShield : Ability
 
     public override void AfterCooldown()
     {
-        Debug.Log("AfterC Shield");
+        usable = true;
     }
 }

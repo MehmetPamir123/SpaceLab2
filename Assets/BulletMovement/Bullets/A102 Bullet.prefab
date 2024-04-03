@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8682940799036160289}
   - component: {fileID: 1101112234884570801}
   m_Layer: 0
-  m_Name: Bullet_A102
+  m_Name: A102 Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletStats: {fileID: 11400000, guid: a743653809025974885c6d34ce7ef6e8, type: 2}
-  faceDirection: 0
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 256

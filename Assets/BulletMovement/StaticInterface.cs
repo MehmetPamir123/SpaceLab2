@@ -13,7 +13,6 @@ public class StaticInterface : UserInterface
         {
 
             var obj = slots[i];
-            Debug.Log(obj.name);
 
             AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
             AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
